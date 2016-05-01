@@ -23,7 +23,7 @@ var userSchema = mongoose.Schema({
     }],
     nutrient         : [{
         month        : Number,
-        food         : String
+        food         : [{vitamin: String}]
     }]
 
 });
