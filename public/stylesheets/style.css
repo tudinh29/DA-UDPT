@@ -1,0 +1,73 @@
+
+#header{
+    margin-bottom: -15px;
+}
+
+#wrapper{
+    width:100%;
+    position: relative;
+    min-width: 500px;
+    margin:auto;
+    height:800px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#left {
+    width:25%;
+    min-width : 120px;
+    height: 800px;
+    background-color:#FFF;
+    float:left;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background-color:#DDEEB7;
+    margin-right: 10px;
+}
+
+#menu-left{
+    width:90%;
+    margin: 10px 0px 0px 14px;
+    border:1px solid #000;
+    border-radius:8px;
+    background-color: #F0F7CE;
+}
+
+#menu-left >ul{
+    list-style-type:none;
+    padding:10px 10px 20px 20px;
+}
+
+#menu-left ul li{
+    list-style-type:none;
+}
+
+#menu-left ul li a{
+    text-decoration:none;
+}
+
+#menu-left li{
+    line-height:30px; /*khoang cach giua cac the li voi nhau*/
+}
+
+#menu-left >ul>li{
+    border-bottom:1px solid #CCC;
+}
+h2 center{
+    background-color: #F0F7CE;
+}
+#main {
+    width: 73%;
+    min-width: 100px;
+    height: 800px;
+    background-color: #F0F7CE;
+    float: left;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#main-right{
+    width:90%;
+    margin: 20px 0px 0px 14px;
+    max-width: 200px;
+    background-color: #F0F7CE;
+}
+
+.navbar-brand{
+    font-size:15px;
+}
