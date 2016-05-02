@@ -25,4 +25,11 @@ module.exports = function(app, passport) {
     app.get('/lichkham/themlichmoi', function(req, res) {
         res.render('themlichmoi.ejs');
     });
+    app.get('/phongkham/goiyphong', function(req, res) {
+        res.render('goiyphong.ejs');
+    });
+    app.get('/phongkham/lichsuphong', function(req, res) {
+        res.render('lichsuphong.ejs');
+    });
+
 }
