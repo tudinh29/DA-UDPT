@@ -42,14 +42,29 @@
 
 
                 <div id = "main">
-                <div id ="main-right">
-                    <ul>
-                       <a href = "#"> Chăm sóc sức khỏe sinh sản ở phụ nữ </a> <br>
-                       <a href = "#"> link... </a><br>
-                       <a href = "#"> link...</a><br>
-                    <ul>
+                    <div id ="main-right">
+
+                        <form method="post" action="/users/friend">
+                           <table class="contactform"
+                               <div class="form-friend">
+                                    <tr>
+                                       <th><label>Ngày giờ khám</label> </th>
+                                       <td><input type="date"   name="ngaykham"></td>
+                                    </tr>
+                                    <tr>
+                                         <th><label>Nơi khám</label> </th>
+                                         <td><input type="text"  size="40" name="noikham"> </td>
+                                    </tr>
+                                   <tr>
+                                        <th><b>Nội dung khám<b> </h5> </th>
+                                        <td><textarea name = "textmess" id = "textmess" rows='6', cols='50' placeholder = "Nhập nội dung..."></textarea> </td>
+                                    </tr>
+                               </div>
+
+                            </table>
+                        </form>
                     </div>
-            </div>
+                </div>
 
 </div>
 

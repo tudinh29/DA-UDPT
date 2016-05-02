@@ -18,4 +18,11 @@ module.exports = function(app, passport) {
     app.get('/suckhoe', function(req, res) {
         res.render('cssk.ejs');
     });
+  
+    app.get('/lichkham/lichsukham', function(req, res) {
+        res.render('lichsukham.ejs');
+    });
+    app.get('/lichkham/themlichmoi', function(req, res) {
+        res.render('themlichmoi.ejs');
+    });
 }
