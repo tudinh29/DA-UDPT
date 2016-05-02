@@ -55,7 +55,7 @@ h2 center{
 }
 #main {
     width: 73%;
-    min-width: 100px;
+
     height: 800px;
     background-color: #F0F7CE;
     float: left;
@@ -64,7 +64,6 @@ h2 center{
 #main-right{
     width:90%;
     margin: 20px 0px 0px 14px;
-    max-width: 200px;
     background-color: #F0F7CE;
 }
 
