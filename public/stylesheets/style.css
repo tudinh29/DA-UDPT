@@ -70,3 +70,28 @@ h2 center{
 .navbar-brand{
     font-size:15px;
 }
+
+#map{
+    position:relative;
+    top:0;
+    left:0;
+    width:85%;
+    height: 55%;
+}
+
+<style>
+  .gm-style-iw{
+    min-width:100px;
+    min-height:20px;
+    text-align:center;
+  }
+  .gm-style canvas{
+    display:block !important;
+  }
+  .gm-style-iw + div{
+    display:none !important;
+  }
+  .gmnoprint{
+    right:90% !important;
+  }
+  </style>
