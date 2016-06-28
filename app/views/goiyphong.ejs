@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
-
+    
 </head>
 <body >
     <div id="header">
@@ -42,42 +42,39 @@
 
 
    <div id = "main">
-    <table class="contactform">
-     <div class="form-friend">
-        <tr>
-         <th><label>Thành phố</label> </th>
-         <td><input type="text"   name="thanhpho"></td>
-     </tr>
-     <tr>
-       <th><label>Quận</label> </th>
-       <td><input type="text"  size="40" name="noikham"> </td>
-   </tr>
-   <tr>
-       
-       <td><button>Tìm</button> </td>
-   </tr>
-</div>
-</table>  
-<br>
-<h2>Thông tin phòng khám</h2>
-<p>..........</p>
-<p>..........</p>
-<p>..........</p>
-<p>..........</p>
-<strong>Bản đồ</strong><br><br>
-
     
-       
-          <div id="map"></div>
-          
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    <div id="type-selector" class="controls">
+      <input type="radio" name="type" id="changetype-all" checked="checked">
+      <label for="changetype-all">All</label>
+
+      <input type="radio" name="type" id="changetype-establishment">
+      <label for="changetype-establishment">Establishments</label>
+
+      <input type="radio" name="type" id="changetype-address">
+      <label for="changetype-address">Addresses</label>
+
+      <input type="radio" name="type" id="changetype-geocode">
+      <label for="changetype-geocode">Geocodes</label>
+    </div>
+    <div id="map"></div>
+
+        
           <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+          </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGtcOs2ZhP1hwdPw2LGyVAKJiaYxNIvvk&libraries=places&callback=initMap"
+        async defer></script>
           <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs8SYxRh-pMXa9Qe-K1nVY0g3CLpmJ9mo"></script>
-          <script type="text/javascript" src="/js/googlemap.js"></script>
+          <script type="text/javascript" src="/js/googlemap.js" callback="initMap();">
+      </script>
+    
+          
             
 
       
 
-</div>
+  </div>
 
 </div>
 
