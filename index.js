@@ -3,8 +3,11 @@
 var express = require("express");
 var app = express();
 
+app.use(express.static(__dirname + 'public')); //setup static public directory
+
+app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
-require('./app/routes.js')(app);
+require('./app/controllers/routes.js')(app);
 app.use( express.static( "img" ) );
 app.use( express.static( "public" ) );
 

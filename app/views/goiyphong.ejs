@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <title>Gợi ý phòng khám</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
+    
+</head>
+<body >
+    <div id="header">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+           <a class="navbar-brand" href="/">Healthcare</a>
+           <a class="navbar-brand" href="/suckhoe">Chăm sóc sức khỏe</a>
+           <a class="navbar-brand" href="/lichkham">Lịch khám</a>
+           <a class="navbar-brand" href="/phongkham">Phòng khám</a>
+           <ul class="nav navbar-nav">
+            <li style="margin-left: 600px;color: white;">
+                <a > Chào bạn ......</a>
+            </li>
+            <li>
+                <a href="/logout"> Thoát</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<h2 > <center>Phòng khám </center></h2>
+<div id = "wrapper" >
+   <div id = "left">
+       <div id = "menu-left">
+           <ul>
+               <li><img class = "icon" src="/image/map.png" /><a class="link" href = "/phongkham">Phòng khám</a>
+                   <ul class = "submenu1">
+                       <li><a class="link" href = "/phongkham/lichsuphong">Lịch sử phòng khám</a></li>
+                       <li><a class="link" href = "/phongkham/goiyphong">Gợi ý phòng khám</a></li>
+                   </ul>
+               </li>
+
+           </ul>
+       </div>
+   </div>
+
+
+   <div id = "main">
+    
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    <div id="type-selector" class="controls">
+      <input type="radio" name="type" id="changetype-all" checked="checked">
+      <label for="changetype-all">All</label>
+
+      <input type="radio" name="type" id="changetype-establishment">
+      <label for="changetype-establishment">Establishments</label>
+
+      <input type="radio" name="type" id="changetype-address">
+      <label for="changetype-address">Addresses</label>
+
+      <input type="radio" name="type" id="changetype-geocode">
+      <label for="changetype-geocode">Geocodes</label>
+    </div>
+    <div id="map"></div>
+
+        
+          <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+          </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGtcOs2ZhP1hwdPw2LGyVAKJiaYxNIvvk&libraries=places&callback=initMap"
+        async defer></script>
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs8SYxRh-pMXa9Qe-K1nVY0g3CLpmJ9mo"></script>
+          <script type="text/javascript" src="/js/googlemap.js" callback="initMap();">
+      </script>
+    
+          
+            
+
+      
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

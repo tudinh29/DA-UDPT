@@ -29,10 +29,10 @@
             	<div id = "left">
                 	<div id = "menu-left">
                     	<ul>
-                        	<li><a href = "/lichkham">Lịch khám</a>
+                        	<li><img class = "icon" src="/image/schedule.png" /><a class="link" href = "/lichkham">Lịch khám</a>
                             	<ul class = "submenu1">
-                                	<li><a href = "/lichkham/lichsukham">Lịch sử khám</a></li>
-                                    <li><a href = "/lichkham/themlichmoi">Thêm lịch mới</a></li>
+                                	<li><a class="link" href = "/lichkham/lichsukham">Lịch sử khám</a></li>
+                                    <li><a class="link" href = "/lichkham/themlichmoi">Thêm lịch mới</a></li>
                                 </ul>
                             </li>
 
@@ -42,29 +42,26 @@
 
 
                 <div id = "main">
-                    <div id ="main-right">
+                <div id ="main-right">
+                        <h3> Danh sách lịch sử khám </h3>
+                        <table border="1" >
+                            <tr>
+                                <td cols="50">
+                                    Ngày khám
+                                </td>
+                                <td>
+                                    Phòng khám
+                                </td>
+                                <td>
+                                    Nội dung khám
+                                </td>
+                                <td>
+                                    Kết quả
+                                </td>
+                            </tr>
+                        </table>
 
-                        <form method="post" action="/users/friend">
-                           <table class="contactform"
-                               <div class="form-friend">
-                                    <tr>
-                                       <th><label>Ngày giờ khám</label> </th>
-                                       <td><input type="date"   name="ngaykham"></td>
-                                    </tr>
-                                    <tr>
-                                         <th><label>Nơi khám</label> </th>
-                                         <td><input type="text"  size="40" name="noikham"> </td>
-                                    </tr>
-                                   <tr>
-                                        <th><b>Nội dung khám<b> </h5> </th>
-                                        <td><textarea name = "textmess" id = "textmess" rows='6', cols='50' placeholder = "Nhập nội dung..."></textarea> </td>
-                                    </tr>
-                               </div>
-
-                            </table>
-                        </form>
-                    </div>
-                </div>
+            </div>
 
 </div>
 

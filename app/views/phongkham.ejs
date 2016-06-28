@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <title>Phòng khám</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+    $('#i_submit').click( function() {
+       //kiem tra trinh duyet co ho tro File API
+        if (window.File && window.FileReader && window.FileList && window.Blob)
+        {
+           // lay dung luong va kieu file tu the input file
+            var fsize = $('#i_file')[0].files[0].size;
+            var ftype = $('#i_file')[0].files[0].type;
+            var fname = $('#i_file')[0].files[0].name;
+        switch(ftype)
+        {
+            case 'image/png':
+            case 'image/gif':
+            case 'image/jpeg':
+            case 'image/pjpeg':
+                if(fsize>2097152)  //thuc hien dieu gi do neu dung luong file vuot qua 1MB
+                {
+                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File: "+fname+") Dung lượng quá lớn, yêu cầu size < 2MB!");
+                }else{
+                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File :"+fname+") Hình ảnh hợp lệ!");
+                }
+                break;
+            default:
+                alert('Loại hình ảnh không được hỗ trợ!');
+        }
+            
+        }else{
+            alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+        }
+    });
+    });
+    </script>
+</head>
+<body >
+    <div id="header">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                     <a class="navbar-brand" href="/">Healthcare</a>
+                     <a class="navbar-brand" href="/suckhoe">Chăm sóc sức khỏe</a>
+                     <a class="navbar-brand" href="/lichkham">Lịch khám</a>
+                     <a class="navbar-brand" href="/phongkham">Phòng khám</a>
+                <ul class="nav navbar-nav">
+                    <li style="margin-left: 600px;color: white;">
+                        <a > Chào bạn ......</a>
+                    </li>
+                    <li>
+                        <a href="/logout"> Thoát</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <h2 > <center>Phòng khám </center></h2>
+    <div id = "wrapper" >
+            	<div id = "left">
+                	<div id = "menu-left">
+                    	<ul>
+                        	<li><img class = "icon" src="/image/map.png" /><a class="link" href = "/phongkham">Phòng khám</a>
+                            	<ul class = "submenu1">
+                                	<li><a class="link" href = "/phongkham/lichsuphong">Lịch sử phòng khám</a></li>
+                                    <li><a class="link" href = "/phongkham/goiyphong">Gợi ý phòng khám</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id = "main">
+                <div id ="main-right">
+                    <ul>
+                       <input id="i_file" type="file" value="" />
+                        <input id="i_submit" type="button" value="Submit" />
+                    <ul>
+                    </div>
+            </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
