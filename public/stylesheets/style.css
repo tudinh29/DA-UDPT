@@ -138,3 +138,9 @@ html, body {
   border-right: 4px solid black;
   padding: 6px 0;
 }
+.icon{
+  overflow: auto;
+  position: relative;
+  float:left;
+
+}
