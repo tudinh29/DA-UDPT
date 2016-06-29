@@ -2,11 +2,11 @@
 
 **DA-UDPT** 
 
-**Thành viên:
+**Thành viên:** 
 *Huỳnh Tấn Trực     1312653
 *Nguyễn Quốc Tuấn   1312665
 *Đinh Minh Tú       1312676
-*Trần Quang VIệt    1312696** 
+*Trần Quang VIệt    1312696
 
 
 
