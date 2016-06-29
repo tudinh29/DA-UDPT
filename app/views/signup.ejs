@@ -25,7 +25,9 @@
                 <div class="panel-heading">
 
                     <h2><span class="fa fa-sign-in"></span> Đăng kí tài khoản</h2>
-
+                        <% if (message.length > 0) { %>
+                         <div class="alert alert-danger"><%= message %></div>
+                        <% } %>
 
                     <br>
                     <!-- SIGNUP FORM -->
