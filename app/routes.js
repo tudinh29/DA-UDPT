@@ -45,7 +45,36 @@ module.exports = function(app, passport) {
         user : req.user
         });
     });
-  
+    app.get('/suckhoe/food-new', isLoggedIn, function(req, res) {
+        res.render('food-new.ejs',{
+        user : req.user
+        });
+    });
+    app.get('/suckhoe/food-most', isLoggedIn, function(req, res) {
+        res.render('food-most.ejs',{
+        user : req.user
+        });
+    });
+    app.get('/suckhoe/health-new', isLoggedIn, function(req, res) {
+        res.render('health-new.ejs',{
+        user : req.user
+        });
+    });
+    app.get('/suckhoe/health-most', isLoggedIn, function(req, res) {
+        res.render('health-most.ejs',{
+        user : req.user
+        });
+    });
+    app.get('/suckhoe/cddd-new', isLoggedIn, function(req, res) {
+        res.render('cddd-new.ejs',{
+        user : req.user
+        });
+    });
+    app.get('/suckhoe/cddd-most', isLoggedIn, function(req, res) {
+        res.render('cddd-most',{
+        user : req.user
+        });
+    });
     app.get('/lichkham/lichsukham', isLoggedIn, function(req, res) {
         res.render('lichsukham.ejs',{
         user : req.user
