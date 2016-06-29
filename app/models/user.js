@@ -17,6 +17,12 @@ var bcrypt   = require('bcrypt-nodejs');
         dop          : Date, // ngay mang thai
         predict      : Date // ngay sinh du doan
     },
+    facebook         : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
+    },
     history_visit    :[{ //lich su kham benh
         place        : String,
         date         : Date,
