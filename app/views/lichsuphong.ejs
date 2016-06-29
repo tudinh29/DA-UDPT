@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body >
     <div id="header">
@@ -16,7 +16,7 @@
                      <a class="navbar-brand" href="/phongkham">Phòng khám</a>
                 <ul class="nav navbar-nav">
                     <li style="margin-left: 600px;color: white;">
-                        <a > Chào bạn ......</a>
+                        <a href="/profile"> Chào bạn <%= user.account.email %></a>
                     </li>
                     <li>
                         <a href="/logout"> Thoát</a>
@@ -31,7 +31,7 @@
                     	<ul>
                         	<li><img class = "icon" src="/image/map.png" /><a class="link" href = "/phongkham">Phòng khám</a>
                             	<ul class = "submenu1">
-                                	<li><a class="link" href = "/phongkham/lichsuphong">Lịch sử phòng khám</a></li>
+                                	<li><a class="link" href = "/phongkham/lichsuphong">Danh sách phòng khám</a></li>
                                     <li><a class="link" href = "/phongkham/goiyphong">Gợi ý phòng khám</a></li>
                                 </ul>
                             </li>
@@ -44,23 +44,37 @@
                 <div id = "main">
                 <div id ="main-right">
                         <h3> Danh sách phòng khám </h3>
-                        <table border="1" >
+                        
+                     <div ng-app="" ng-init="danhsach=[
+                    {name:'Công Ty TNHH Phòng Khám Gia Đình Tp. HCM',diachi:'Diamond Plaza, 34 Lê Duẩn, P. Bến Nghé, Q. 1, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 38227848'},
+                    {name:'Phòng Khám Đa Khoa Thiên Phước',diachi:'269 Điện Biên Phủ, P. 7, Q. 3, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 39330002'}, 
+                    {name:'Phòng Khám Đa Khoa Thái Bình Dương',diachi:'34-36 Đinh Tiên Hoàng, P. Đa Kao, Q. 1, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 38788555'},
+                    {name:'Phòng Khám Maple Healthcare Chiropractic',diachi:'10 Trần Phú, P. 4, Q. 5, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 38321843'},
+                    {name:'Công Ty TNHH Dược Phẩm Khang Thái',diachi:'87 Trần Não, P. Bình An, Q. 2, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 37404368'} ]">
+
+                        <table style="font-size:23px" border="1" >
                             <tr>
                                 <td cols="50">
-                                    Ngày khám
+                                    <b>Tên phòng khám</b>
                                 </td>
                                 <td>
-                                    Địa điểm
+                                    <b>Địa điểm phòng khám</b>
                                 </td>
                                 <td>
-                                    Nội dung khám
-                                </td>
-                                <td>
-                                    Đánh giá
-                                </td>
+                                    <b>SĐT</b>
+                                </td>                   
                             </tr>
-                        </table>
-
+                            <tr ng-repeat="x in danhsach">
+                                <td>
+                                 {{ x.name}}
+                                </td>
+                                <td>
+                                 {{x.diachi}}
+                                </td>
+                                <td>
+                                 {{x.sdt}}
+                                </td>
+                            </tr>                                                      
             </div>
 
 </div>

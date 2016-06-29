@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+    $('#i_submit').click( function() {
+       //kiem tra trinh duyet co ho tro File API
+        if (window.File && window.FileReader && window.FileList && window.Blob)
+        {
+           // lay dung luong va kieu file tu the input file
+            var fsize = $('#i_file')[0].files[0].size;
+            var ftype = $('#i_file')[0].files[0].type;
+            var fname = $('#i_file')[0].files[0].name;
+        switch(ftype)
+        {
+            case 'image/png':
+            case 'image/gif':
+            case 'image/jpeg':
+            case 'image/pjpeg':
+                if(fsize>4194304)  //thuc hien dieu gi do neu dung luong file vuot qua 2MB
+                {
+                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File: "+fname+") Dung lượng quá lớn, yêu cầu size < 2MB!");
+                }else{
+                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File :"+fname+") Hình ảnh hợp lệ!");
+                }
+                break;
+            default:
+                alert('Loại hình ảnh không được hỗ trợ!');
+        }
+            
+        }else{
+            alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+        }
+    });
+    });
+    </script>
+</head>
+<body >
+    <div id="header">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                     <a class="navbar-brand" href="/">Healthcare</a>
+                     <a class="navbar-brand" href="/suckhoe">Chăm sóc sức khỏe</a>
+                     <a class="navbar-brand" href="/lichkham">Lịch khám</a>
+                     <a class="navbar-brand" href="/phongkham">Phòng khám</a>
+                <ul class="nav navbar-nav">
+                    <li style="margin-left: 600px;color: white;">
+                        <a href="/profile"> Chào bạn <%= user.account.email %></a>
+                    </li>
+                    <li>
+                        <a href="/logout"> Thoát</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <h2 > <center>Thông tin cá nhân </center></h2>
+    <div id = "wrapper" >
+                <div id = "left">
+                    <div id = "menu-left">
+                        <ul>
+                            <li><img class = "icon" src="/image/account.png" /><a class="link" href = "/profile">Thông tin cá nhân</a>
+                                <ul class = "submenu1">
+                                    <li><a class="link" href = "/profile">Tài khoản</a></li>
+                                    <li><a class="link" href = "/lichkham/lichsukham">Lịch sử khám</a></li>
+                                </ul>
+                            </li>
+                            <form id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
+                                <input type="file" name="userPhoto" />
+                                <input type="submit" value="Upload Image" name="submit">
+                                <span id = "status"></span>
+                            </form>    
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id = "main">
+                <div id ="main-right">
+                    <ul>
+                       <p> Email đăng kí: <%= user.account.email %></p>
+                       <p> Họ tên: <%= user.infomation.name %></p>
+                       <p> Ngày sinh: <%= user.infomation.dob %></p>
+                       <p> Địa chỉ: <%= user.infomation.address %></p>
+                       <p> Số điện thoại: <%= user.infomation.phonenumber %></p>
+                       <p> Ngày mang thai: <%= user.infomation.dop %></p>
+                       <p> Ngày sinh dự đoán: <%= user.infomation.predict %></p>  
+                       <button> <a href="/profile/capnhat"> Cập nhật thông tin</a></button>
+                    <ul>
+                    </div>
+            </div>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script>
+  $(document).ready(function() {
+
+     $('#uploadForm').submit(function() {
+         $("#status").empty().text("File is uploading...");
+
+        $(this).ajaxSubmit({
+
+            error: function(xhr) {
+                    status('Error: ' + xhr.status);
+            },
+
+            success: function(response) {
+                    console.log(response)
+                    $("#status").empty().text(response);
+            }
+    });
+
+    return false;
+    });    
+});
+  </script>
+
+
+
+</body>
+</html>

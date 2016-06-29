@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
 
 </head>
 <body >
@@ -16,7 +17,7 @@
                      <a class="navbar-brand" href="/phongkham">Phòng khám</a>
                 <ul class="nav navbar-nav">
                     <li style="margin-left: 600px;color: white;">
-                        <a > Chào bạn ......</a>
+                        <a href="/profile"> Chào bạn <%= user.account.email %></a>
                     </li>
                     <li>
                         <a href="/logout"> Thoát</a>
@@ -44,12 +45,13 @@
                 <div id = "main">
                     <div id ="main-right">
 
-                        <form method="post" action="/users/friend">
+                        <form method="post" action="/lichkham/themlichmoi">
                            <table class="contactform"
                                <div class="form-friend">
+                                
                                     <tr>
                                        <th><label>Ngày giờ khám</label> </th>
-                                       <td><input type="date"   name="ngaykham"></td>
+                                       <td><input id="myDate" type="date"   name="ngaykham" ></td>
                                     </tr>
                                     <tr>
                                          <th><label>Nơi khám</label> </th>
@@ -59,16 +61,47 @@
                                         <th><b>Nội dung khám<b> </h5> </th>
                                         <td><textarea name = "textmess" id = "textmess" rows='6', cols='50' placeholder = "Nhập nội dung..."></textarea> </td>
                                     </tr>
+
                                </div>
+                                <button type="submit" >Thêm</button>
+                            <span id = "status"></span>
 
                             </table>
                         </form>
                     </div>
+                     <script>
+                (function myFunction() {
+                    document.getElementById("myDate").value = "2000-01-01";
+                }());
+                </script>  
                 </div>
 
 </div>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script>
+  $(document).ready(function() {
 
+     $('#themlichForm').submit(function() {
+         $("#status").empty().text("Đang thêm lịch...");
+
+        $(this).ajaxSubmit({
+
+            error: function(xhr) {
+                    status('Error: ' + xhr.status);
+            },
+
+            success: function(response) {
+                    console.log(response)
+                    $("#status").empty().text(response);
+            }
+    });
+
+    return false;
+    });    
+});
+  </script>
 
 
 

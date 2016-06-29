@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>Chăm sóc sức khỏe</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
+
+</head>
+<body >
+    <div id="header">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                     <a class="navbar-brand" href="/">Healthcare</a>
+                     <a  class="navbar-brand" href="/suckhoe">Chăm sóc sức khỏe</a>
+                     <a class="navbar-brand" href="/lichkham">Lịch khám</a>
+                     <a class="navbar-brand" href="/phongkham">Phòng khám</a>
+                <ul class="nav navbar-nav">
+                    <li style="margin-left: 600px;color: white;">
+                        <a href="/profile"> Chào bạn <%= user.account.email %></a>
+                    </li>
+                    <li>
+                        <a href="/logout"> Thoát</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <h2 > <center>Sức khỏe cho mẹ và bé</center></h2>
+    <div id = "wrapper" >
+            	<div id = "left">
+                	<div id = "menu-left">
+                    	<ul>
+                        	<li><img class = "icon" src="/image/food.png" /><a class="link" href = "#">Thực phẩm tốt</a>
+                            	<ul class = "submenu1">
+                                	<li><img class = "icon" src="/image/new.png" /><a class="link" href = "/suckhoe/food-new">Các bài mới nhất</a></li>
+                                    <li><img class = "icon" src="/image/best.png" /><a class="link" href = "/suckhoe/food-most">Các bài được xem nhiều nhất</a></li>
+                                </ul>
+                            </li>
+                            <li><img class = "icon" src="/image/protect.png" /><a class="link" href = "#">Sức khỏe cho mẹ và bé</a>
+                            	<ul  class = "submenu1">
+                                	<li><img class = "icon" src="/image/new.png" /><a class="link" href = "/suckhoe/health-new">Các bài mới nhất</a></li>
+                                    <li><img class = "icon" src="/image/best.png" /><a class="link" href = "/suckhoe/health-most">Các bài được xem nhiều nhất</a></li>
+                                </ul>
+                            </li>
+    						<li><img class = "icon" src="/image/info.png" /><a class="link" href = "#">Chế độ dinh dưỡng</a>
+    							<ul  class = "submenu1">
+                                	<li><img class = "icon" src="/image/new.png" /><a class="link" href = "/suckhoe/cddd-new">Các bài mới nhất</a></li>
+                                    <li><img class = "icon" src="/image/best.png" /><a class="link" href = "/suckhoe/cddd-most">Các bài được xem nhiều nhất</a></li>
+                                </ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id = "main">
+                <div id ="main-right">
+                    <ul>
+                        
+                        <li><a class="link2" href = "http://www.thegioimevabe.com/suc-khoe-sau-sinh/100-phuc-hoi-suc-khoe-sau-khi-sinh-mo.html">Phục hồi sức khoẻ sau khi sinh mổ</a></li>
+                        <li><a class="link2" href = "http://www.thegioimevabe.com/suc-khoe-sau-sinh/99-nguyen-tac-phuc-hoi-suc-khoe-sau-sinh.html">Nguyên tắc phục hồi sức khỏe sau sinh</a></li>
+                        <li><a class="link2" href = "http://www.thegioimevabe.com/cham-soc-suc-khoe-be/45-cach-giu-am-cho-be-trong-ngay-ret-dam.html">Cách giữ ấm cho bé trong ngày rét đậm</a></li>
+                        <li><a class="link2" href = "http://www.thegioimevabe.com/cham-soc-suc-khoe-be/44-cham-soc-lan-da-be-yeu.html">Chăm sóc làn da bé yêu</a></li>
+                        <li><a class="link2" href = "http://www.thegioimevabe.com/phong-benh-cho-be/43-tieu-chay-o-tre-em-va-cach-phong-ngua.html">Tiêu chảy ở trẻ em và cách phòng ngừa</a></li>
+                        <li><a class="link2" href = "http://www.thegioimevabe.com/phong-benh-cho-be/42-phong-tranh-va-chua-benh-cham-sua-cho-be.html">Phòng tránh và chữa bệnh chàm sữa cho bé</a></li>
+
+                        
+                    </ul>
+                    </div>
+            </div>
+
+</div>
+</body>
+</html>

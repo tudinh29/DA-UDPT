@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <title>Chăm sóc sức khỏe</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
+
+</head>
+<body >
+    <div id="header">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                     <a class="navbar-brand" href="/">Healthcare</a>
+                     <a  class="navbar-brand" href="/suckhoe">Chăm sóc sức khỏe</a>
+                     <a class="navbar-brand" href="/lichkham">Lịch khám</a>
+                     <a class="navbar-brand" href="/phongkham">Phòng khám</a>
+                <ul class="nav navbar-nav">
+                    <li style="margin-left: 600px;color: white;">
+                        <a href="/profile"> Chào bạn <%= user.account.email %></a>
+                    </li>
+                    <li>
+                        <a href="/logout"> Thoát</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <h2 > <center>Chế độ dinh dưỡng</center></h2>
+    <div id = "wrapper" >
+            	<div id = "left">
+                	<div id = "menu-left">
+                    	<ul>
+                        	<li><img class = "icon" src="/image/food.png" /><a class="link" href = "#">Thực phẩm tốt</a>
+                            	<ul class = "submenu1">
+                                	<li><img class = "icon" src="/image/new.png" /><a class="link" href = "/suckhoe/food-new">Các bài mới nhất</a></li>
+                                    <li><img class = "icon" src="/image/best.png" /><a class="link" href = "/suckhoe/food-most">Các bài được xem nhiều nhất</a></li>
+                                </ul>
+                            </li>
+                            <li><img class = "icon" src="/image/protect.png" /><a class="link" href = "#">Sức khỏe cho mẹ và bé</a>
+                            	<ul  class = "submenu1">
+                                	<li><img class = "icon" src="/image/new.png" /><a class="link" href = "/suckhoe/health-new">Các bài mới nhất</a></li>
+                                    <li><img class = "icon" src="/image/best.png" /><a class="link" href = "/suckhoe/health-most">Các bài được xem nhiều nhất</a></li>
+                                </ul>
+                            </li>
+    						<li><img class = "icon" src="/image/info.png" /><a class="link" href = "#">Chế độ dinh dưỡng</a>
+    							<ul  class = "submenu1">
+                                	<li><img class = "icon" src="/image/new.png" /><a class="link" href = "/suckhoe/cddd-new">Các bài mới nhất</a></li>
+                                    <li><img class = "icon" src="/image/best.png" /><a class="link" href = "/suckhoe/cddd-most">Các bài được xem nhiều nhất</a></li>
+                                </ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id = "main">
+                <div id ="main-right">
+                    <ul>
+                         <li><a class="link2" href = "http://www.marrybaby.vn/thai-giao/dinh-duong-khi-mang-thai-an-chuan-theo-tung-thang">Dinh dưỡng khi mang thai: Ăn chuẩn theo từng tháng</a></li>
+                        <li><a class="link2" href = "http://afamily.vn/me-va-be/24-van-de-dinh-duong-quan-trong-trong-suot-thai-ky-20131212035640786.chn">24 vấn đề dinh dưỡng quan trọng trong suốt thai kỳ</a></li>
+                        <li><a class="link2" href = "http://www.enfa.com.vn/articles/mot-vai-luu-y-ve-dinh-duong-cho-me-bau-mang-song-thai">Một vài lưu ý về dinh dưỡng cho mẹ bầu mang song thai</a></li>
+                        <li><a class="link2" href = "http://afamily.vn/me-va-be/7-dieu-ve-dinh-duong-thai-ky-me-bau-can-chu-y-20150324111729564.chn">7 điều về dinh dưỡng thai kỳ mẹ bầu cần chú ý</a></li>
+
+
+                    </ul>
+                    </div>
+            </div>
+
+</div>
+</body>
+</html>

@@ -25,7 +25,9 @@
                 <div class="panel-heading">
 
                     <h2><span class="fa fa-sign-in"></span> Đăng kí tài khoản</h2>
-
+                        <% if (message.length > 0) { %>
+                         <div class="alert alert-danger"><%= message %></div>
+                        <% } %>
 
                     <br>
                     <!-- SIGNUP FORM -->
@@ -44,7 +46,7 @@
 
                     <hr>
 
-                    <p>Đã có tài khoản? <a href="/dangnhap">Login</a></p>
+                    <p>Đã có tài khoản? <a href="/login">Login</a></p>
                     <p>Về <a href="/">trang chủ</a>.</p>
 
                 </div>

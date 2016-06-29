@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel =" stylesheet" type = "text/css" href = "/stylesheets/style.css"/>
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body >
     <div id="header">
@@ -16,7 +16,7 @@
            <a class="navbar-brand" href="/phongkham">Phòng khám</a>
            <ul class="nav navbar-nav">
             <li style="margin-left: 600px;color: white;">
-                <a > Chào bạn ......</a>
+                <a href="/profile"> Chào bạn <%= user.account.email %></a>
             </li>
             <li>
                 <a href="/logout"> Thoát</a>
@@ -31,7 +31,7 @@
            <ul>
                <li><img class = "icon" src="/image/map.png" /><a class="link" href = "/phongkham">Phòng khám</a>
                    <ul class = "submenu1">
-                       <li><a class="link" href = "/phongkham/lichsuphong">Lịch sử phòng khám</a></li>
+                       <li><a class="link" href = "/phongkham/lichsuphong">Danh sách phòng khám</a></li>
                        <li><a class="link" href = "/phongkham/goiyphong">Gợi ý phòng khám</a></li>
                    </ul>
                </li>
@@ -42,23 +42,43 @@
 
 
    <div id = "main">
-    
-    <input id="pac-input" class="controls" type="text"
-        placeholder="Enter a location">
-    <div id="type-selector" class="controls">
-      <input type="radio" name="type" id="changetype-all" checked="checked">
-      <label for="changetype-all">All</label>
+      <h3> Gọi ý tìm phòng khám </h3>
+       <div ng-app="" ng-init="danhsach=[
+                    {name:'Phòng Khám Đa Khoa Thiên Phước',diachi:'269 Điện Biên Phủ, P. 7, Q. 3, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 39330002'}, 
+                    {name:'Phòng Khám Đa Khoa Thiên Phước',diachi:'269 Điện Biên Phủ, P. 7, Q. 3, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 39330002'},                
+                    {name:'Phòng Khám Maple Healthcare Chiropractic',diachi:'10 Trần Phú, P. 4, Q. 5, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 38321843'},
+                    {name:'Công Ty TNHH Dược Phẩm Khang Thái',diachi:'87 Trần Não, P. Bình An, Q. 2, Tp. Hồ Chí Minh (TPHCM)',sdt:'(08 ) 37404368'} ]">
+                    <center>      
+                        <table style="font-size:21px" border="1" >
+                            <tr>
+                                <td cols="50">
+                                    <b>Tên phòng khám</b>
+                                </td>                                              
+                            </tr>
+                            <tr ng-repeat="x in danhsach">
+                                <td>
+                                 {{ x.name}}
+                                </td>
+                              
+                            </tr>                
+                    </table>
+                    </center></div>
+          <input id="pac-input" class="controls" type="text"
+              placeholder="Enter a location">
+          <div id="type-selector" class="controls">
+            <input type="radio" name="type" id="changetype-all" checked="checked">
+            <label for="changetype-all">All</label>
 
-      <input type="radio" name="type" id="changetype-establishment">
-      <label for="changetype-establishment">Establishments</label>
+            <input type="radio" name="type" id="changetype-establishment">
+            <label for="changetype-establishment">Establishments</label>
 
-      <input type="radio" name="type" id="changetype-address">
-      <label for="changetype-address">Addresses</label>
+            <input type="radio" name="type" id="changetype-address">
+            <label for="changetype-address">Addresses</label>
 
-      <input type="radio" name="type" id="changetype-geocode">
-      <label for="changetype-geocode">Geocodes</label>
-    </div>
-    <div id="map"></div>
+            <input type="radio" name="type" id="changetype-geocode">
+            <label for="changetype-geocode">Geocodes</label>
+          </div>
+          <div id="map"></div>
 
         
           <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
