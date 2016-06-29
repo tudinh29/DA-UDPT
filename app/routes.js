@@ -134,6 +134,12 @@ module.exports = function(app, passport) {
         });
     });
      app.post('/profile/capnhat',function(req, res){
+        User.update({'account.email' : req.user.account.email},{$set:{"infomation.name":req.param('fullname'),"infomation.dob":req.param('dob'),"infomation.address":req.param('address'),"infomation.phonenumber":req.param('phone'),"infomation.predict":req.param('dop')}},function(err, result){
+            if(err){
+                console.log(err);
+                return res.end("error");
+            }
+        });
          res.redirect('/profile');
     });
 
