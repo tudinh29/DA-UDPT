@@ -3,9 +3,9 @@
 module.exports = {
 
     'facebookAuth' : {
-        'clientID'        : '163017377427263', 
-        'clientSecret'    : 'f33431192c2a72d753df25d2bcf0d659', 
-        'callbackURL'     : 'https://chat-bt2.herokuapp.com/auth/facebook/callback'
+        'clientID'        : '1059150390801575', 
+        'clientSecret'    : '04d1c40a33e1dea2a7dfa889d9969224', 
+        'callbackURL'     : 'https://pregnant-udpt-doan.herokuapp.com/auth/facebook/callback'
     },
 
     'googleAuth' : {
