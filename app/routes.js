@@ -51,6 +51,11 @@ module.exports = function(app, passport) {
         user : req.user
         });
     });
+    app.get('/profile', isLoggedIn, function(req, res) {
+        res.render('profile.ejs',{
+        user : req.user
+        });
+    });
     app.get('/lichkham/themlichmoi', isLoggedIn, function(req, res) {
         res.render('themlichmoi.ejs',{
         user : req.user
