@@ -20,7 +20,7 @@ $(document).ready(function(){
                      <a class="navbar-brand" href="/lichkham">Lịch khám</a>
                      <a class="navbar-brand" href="/phongkham">Phòng khám</a>
                 <ul class="nav navbar-nav">
-                    <li style="margin-left: 600px;color: white;">
+                    <li style="margin-left: 400px;color: white;">
                         <a href="/profile"> Chào bạn <%= user.account.email %></a>
                     </li>
                     <li>
@@ -34,7 +34,7 @@ $(document).ready(function(){
                 <div id = "left">
                     <div id = "menu-left">
                         <ul>
-                            <li><img  class = "icon" width="95%" height="65%" alt="" src="<%= user.infomation.avatar%>" /><a class="link" href = "/profile">Thông tin cá nhân</a>
+                            <li><img  class = "avat" width="95%" height="65%" alt="" src="<%= user.infomation.avatar%>" /><a class="link" href = "/profile">Thông tin cá nhân</a>
                                 <ul class = "submenu1">
                                     <li><a class="link" href = "/profile">Tài khoản</a></li>
                                     <li><a class="link" href = "/lichkham/lichsukham">Lịch sử khám</a></li>
