@@ -1,5 +1,5 @@
 var User = require('./models/user.js');
-
+var dateformat = require ('dateformat');
 module.exports = function(app, passport) {
 	// HOMEPAGE
     app.get('/', function(req, res) {
