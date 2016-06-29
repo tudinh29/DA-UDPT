@@ -8,35 +8,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
 <script>
 $(document).ready(function(){
-    $('#i_submit').click( function() {
-       //kiem tra trinh duyet co ho tro File API
-        if (window.File && window.FileReader && window.FileList && window.Blob)
-        {
-           // lay dung luong va kieu file tu the input file
-            var fsize = $('#i_file')[0].files[0].size;
-            var ftype = $('#i_file')[0].files[0].type;
-            var fname = $('#i_file')[0].files[0].name;
-        switch(ftype)
-        {
-            case 'image/png':
-            case 'image/gif':
-            case 'image/jpeg':
-            case 'image/pjpeg':
-                if(fsize>4194304)  //thuc hien dieu gi do neu dung luong file vuot qua 2MB
-                {
-                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File: "+fname+") Dung lượng quá lớn, yêu cầu size < 2MB!");
-                }else{
-                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File :"+fname+") Hình ảnh hợp lệ!");
-                }
-                break;
-            default:
-                alert('Loại hình ảnh không được hỗ trợ!');
-        }
-            
-        }else{
-            alert("Please upgrade your browser, because your current browser lacks some new features we need!");
-        }
-    });
+    
     });
     </script>
 </head>
@@ -62,15 +34,15 @@ $(document).ready(function(){
                 <div id = "left">
                     <div id = "menu-left">
                         <ul>
-                            <li><img class = "icon" src="/image/account.png" /><a class="link" href = "/profile">Thông tin cá nhân</a>
+                            <li><img  class = "icon" width="95%" height="65%" alt="" src="<%= user.infomation.avatar%>" /><a class="link" href = "/profile">Thông tin cá nhân</a>
                                 <ul class = "submenu1">
                                     <li><a class="link" href = "/profile">Tài khoản</a></li>
                                     <li><a class="link" href = "/lichkham/lichsukham">Lịch sử khám</a></li>
                                 </ul>
                             </li>
                             <form id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
-                                <input type="file" name="userPhoto" />
-                                <input type="submit" value="Upload Image" name="submit">
+                                <input id ="i_file" type="file" name="userPhoto" />
+                                <input id ="submit" type="submit" value="Upload Image" name="submit">
                                 <span id = "status"></span>
                             </form>    
                         </ul>
@@ -99,10 +71,40 @@ $(document).ready(function(){
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
   <script>
   $(document).ready(function() {
+    //var link = <%= user.infomation.avatar%>
+    $('#submit').click( function() {
+           //kiem tra trinh duyet co ho tro File API
+           
+            if (window.File && window.FileReader && window.FileList && window.Blob)
+            {
+               // lay dung luong va kieu file tu the input file
+                var fsize = $('#i_file')[0].files[0].size;
+                var ftype = $('#i_file')[0].files[0].type;
+                var fname = $('#i_file')[0].files[0].name;
+            switch(ftype)
+            {
+                case 'image/png':
+                case 'image/jpg':
+                case 'image/gif':
+                case 'image/jpeg':
+                case 'image/pjpeg':
+                    if(fsize > 4194304)  //thuc hien dieu gi do neu dung luong file vuot qua 2MB
+                    {
+                        alert("Type :"+ ftype +" | "+ fsize +" bites\n(File: "+fname+") Dung lượng quá lớn, yêu cầu size < 4MB!");
+                    }                
+                    break;
+                default:
+                    alert('Loại hình ảnh không được hỗ trợ!');
+            }
+                
+            }else{
+                alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+            }
+        });
 
      $('#uploadForm').submit(function() {
          $("#status").empty().text("File is uploading...");
-
+         //$(".icon").attr("src", "/uploads/zzz@gmail.png?");
         $(this).ajaxSubmit({
 
             error: function(xhr) {
@@ -110,7 +112,8 @@ $(document).ready(function(){
             },
 
             success: function(response) {
-                    console.log(response)
+                    console.log(response);
+                    
                     $("#status").empty().text(response);
             }
     });

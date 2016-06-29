@@ -146,12 +146,13 @@ module.exports = function(app, passport) {
     });
 
      app.post('/api/photo',function(req,res){
+        
     upload(req,res,function(err) {
         if(err) {
             console.log(err);
             return res.end("Error uploading file.");
         }
-        var temp = __dirname + '\\uploads\\' + req.user.account.email;
+        var temp =  './/uploads//' + req.user.account.email;
         User.update({'account.email' : req.user.account.email}, {$set:{"infomation.avatar":temp}},function(err, result){
             if(err){
                 res.end("error");
