@@ -1,7 +1,19 @@
 var User = require('./models/user.js');
 var dateformat = require ('dateformat');
+
+var multer  =   require('multer');
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './app/uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, req.user.account.email);
+  }
+});
+var upload = multer({ storage : storage}).single('userPhoto');
+
 module.exports = function(app, passport) {
-	// HOMEPAGE
+    // HOMEPAGE
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
@@ -124,6 +136,24 @@ module.exports = function(app, passport) {
      app.post('/profile/capnhat',function(req, res){
          res.redirect('/profile');
     });
+
+     app.post('/api/photo',function(req,res){
+    upload(req,res,function(err) {
+        if(err) {
+            console.log(err);
+            return res.end("Error uploading file.");
+        }
+        var temp = __dirname + '\\uploads' + req.user.account.email;
+        User.update({'account.email' : req.user.account.email}, {$set:{"infomation.avatar":temp}},function(err, result){
+            if(err){
+                res.end("error");
+                }
+            });
+            res.end("File is uploaded");
+        });
+    });
+
+
 
 }
 
