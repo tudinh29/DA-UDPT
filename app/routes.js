@@ -4,7 +4,7 @@ var dateformat = require ('dateformat');
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, './app/uploads');
+    callback(null, './app/uploads/');
   },
   filename: function (req, file, callback) {
     callback(null, req.user.account.email);
@@ -134,7 +134,9 @@ module.exports = function(app, passport) {
         });
     });
      app.post('/profile/capnhat',function(req, res){
-        User.update({'account.email' : req.user.account.email},{$set:{"infomation.name":req.param('fullname'),"infomation.dob":req.param('dob'),"infomation.address":req.param('address'),"infomation.phonenumber":req.param('phone'),"infomation.predict":req.param('dop')}},function(err, result){
+        var temp =  new Date(req.param('dop'));
+        var date = new Date(temp.setMonth(temp.getMonth() + 9));
+        User.update({'account.email' : req.user.account.email},{$set:{"infomation.name":req.param('fullname'),"infomation.dob":req.param('dob'),"infomation.address":req.param('address'),"infomation.phonenumber":req.param('phone'),"infomation.dop":req.param('dop'), "infomation.predict":date}},function(err, result){
             if(err){
                 console.log(err);
                 return res.end("error");
@@ -149,7 +151,7 @@ module.exports = function(app, passport) {
             console.log(err);
             return res.end("Error uploading file.");
         }
-        var temp = __dirname + '\\uploads' + req.user.account.email;
+        var temp = __dirname + '\\uploads\\' + req.user.account.email;
         User.update({'account.email' : req.user.account.email}, {$set:{"infomation.avatar":temp}},function(err, result){
             if(err){
                 res.end("error");
