@@ -24,6 +24,7 @@ app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + 'public')); //setup static public directory
+app.use(express.static(__dirname + 'app')); //setup static public directory
 
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
@@ -34,6 +35,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./app/routes.js')(app,passport);
 app.use( express.static( "img" ) );
 app.use( express.static( "public" ) );
+app.use( express.static( "app" ) );
 
 
 app.listen(process.env.PORT || 3000, function(){
