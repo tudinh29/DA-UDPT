@@ -26,12 +26,12 @@
         </div>
     <h2 > <center>Thông tin cá nhân </center></h2>
     <div id = "wrapper" >
-            	<div id = "left">
-                	<div id = "menu-left">
-                    	<ul>
-                        	<li><img class = "icon" src="/image/account.png" /><a class="link" href = "/profile">Thông tin cá nhân</a>
-                            	<ul class = "submenu1">
-                                	<li><a class="link" href = "/profile">Tài khoản</a></li>
+                <div id = "left">
+                    <div id = "menu-left">
+                        <ul>
+                            <li><img class = "icon" src="/image/account.png" /><a class="link" href = "/profile">Thông tin cá nhân</a>
+                                <ul class = "submenu1">
+                                    <li><a class="link" href = "/profile">Tài khoản</a></li>
                                     <li><a class="link" href = "/lichkham/lichsukham">Lịch sử khám</a></li>
                                 </ul>
                             </li>
@@ -45,13 +45,12 @@
                 <div id ="main-right">
                     <ul>
                        <p> Email đăng kí: <%= user.account.email %></p>
-                       <p> Mật khẩu: </p>
-                       <p> Họ tên: </p>
-                       <p> Ngày sinh: </p>
-                       <p> Địa chỉ: </p>
-                       <p> Số điện thoại: </p>
-                       <p> Ngày mang thai: </p>
-                       <p> Ngày sinh dự đoán: </p>  
+                       <p> Họ tên: <%= user.infomation.name %></p>
+                       <p> Ngày sinh: <%= user.infomation.dob %></p>
+                       <p> Địa chỉ: <%= user.infomation.address %></p>
+                       <p> Số điện thoại: <%= user.infomation.phonenumber %></p>
+                       <p> Ngày mang thai: <%= user.infomation.dop %></p>
+                       <p> Ngày sinh dự đoán: <%= user.infomation.predict %></p>  
                        <button> <a href="/profile/capnhat"> Cập nhật thông tin</a></button>
                     <ul>
                     </div>
