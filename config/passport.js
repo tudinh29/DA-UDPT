@@ -41,7 +41,10 @@ module.exports = function(passport) {
     function(req, email, password, done) {
         if (email)
             email = email.toLowerCase(); // Use lower-case e-mails to avoid case-sensitive e-mail matching
-
+        var check = String(email).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&quot;').replace(/!/g, '&quot;');
+        check = String(check).replace(/#/g, '&amp;').replace(/=/g, '&amp;')
+        if ( email != check )
+            return done(null, false, req.flash('loginMessage', 'Email không được có kí tự đặc biệt.'));
         // asynchronous
         process.nextTick(function() {
             User.findOne({ 'account.email' :  email }, function(err, user) {
@@ -73,10 +76,16 @@ module.exports = function(passport) {
         passwordField : 'password',
         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
     },
+    
+
+
     function(req, email, password, done) {
         if (email)
             email = email.toLowerCase(); // Use lower-case e-mails to avoid case-sensitive e-mail matching
-
+        var check = String(email).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&quot;').replace(/!/g, '&quot;');
+        check = String(check).replace(/#/g, '&amp;').replace(/=/g, '&amp;')
+        if ( email != check )
+            return done(null, false, req.flash('signupMessage', 'Email không được có kí tự đặc biệt'));
         // asynchronous
         process.nextTick(function() {
             // if the user is not already logged in:
