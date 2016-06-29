@@ -1,8 +1,20 @@
 var User = require('./models/user.js');
 
 module.exports = function(app, passport) {
-	app.get('/', function(req, res) {
+	// HOMEPAGE
+    app.get('/', function(req, res) {
         res.render('index.ejs');
+    });
+    // PAGE LICHKHAM
+    app.get('/lichkham', isLoggedIn, function(req, res) {
+        res.render('lichkham.ejs', {
+            user : req.user
+        });
+    });
+    // LOGOUT ==============================
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
     });
     // LOGIN =======================
     app.get('/login', function(req, res) {
