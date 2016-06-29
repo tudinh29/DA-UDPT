@@ -1,4 +1,4 @@
-# DA-UDPT - Pregnant reminder
+﻿# DA-UDPT - Pregnant reminder
 
 **DA-UDPT** 
 
@@ -69,17 +69,17 @@ Yêu cầu **AJAX**:
 
 * [ ] Có làm
 * [x] Lập trình AJAX với JSON
-* [ ] Lập trình AJAX với các callback success, error
+* [x] Lập trình AJAX với các callback success, error
 * [ ] Sử dụng một số design pattern để thiết kế lớp truy xuất API
 * [ ] Lưu trữ thông tin chứng thực tự động 
 * [x] Upload file với AJAX
 
 Yêu cầu **Web API**:
 
-* [ ] Có làm
-* [ ] Dùng JSON hoặc XML
-* [ ] Thiết kế API theo Restful hợp lý
-* [ ] Xây dựng được các API lấy thông tin đơn giản
+* [x] Có làm
+* [x] Dùng JSON hoặc XML
+* [x] Thiết kế API theo Restful hợp lý
+* [x] Xây dựng được các API lấy thông tin đơn giản
 * [x] Xây dựng API cho phép đăng thông tin như cập nhật, xóa,...
 * [ ] Có chứng thực API
 * [ ] Tải file lên qua API
@@ -113,6 +113,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 ## Chức Năng
 * [x] Đăng kí tài khoản bằng email, password
 * [x] Đăng nhập bằng email,password
+* [x] Đăng nhập qua facebook
 * [x] Sau khi đăng nhập xong, chuyển đến trang lịch sử khám bệnh, hiển thị những lần khám bệnh trước đó của người dùng
 * [x] Trang chăm sóc sức khỏe liệt kê các mục về thực phẩm tốt, chế độ dinh dưỡng, an toàn sức khỏe cho mẹ và bé ,... cùng các bài viết liên quan để người dùng dễ dàng tìm kiếm thông tin
 * [x] Người dùng có thể xem danh sách các phòng khám gợi ý, đồng thời có thể tìm kiếm phòng khám theo google map
