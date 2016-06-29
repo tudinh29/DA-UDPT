@@ -3,10 +3,10 @@
 **DA-UDPT** 
 
 **Thành viên:** 
-*Huỳnh Tấn Trực     1312653
-*Nguyễn Quốc Tuấn   1312665
-*Đinh Minh Tú       1312676
-*Trần Quang VIệt    1312696
+1. Huỳnh Tấn Trực     -1312653.
+2. Nguyễn Quốc Tuấn   -1312665.
+3. Đinh Minh Tú       -1312676.
+4. Trần Quang VIệt    -1312696.
 
 
 
@@ -123,8 +123,12 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 * [ ] Định vị và gợi ý các bệnh viện xung quanh vị trí
 * [ ] Nhắc nhở thực đơn mỗi tháng 
 
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
+## Ảnh gif demo
 ![Video Walkthrough] (demo.gif)
+
+
+## Ảnh wireframe
+![Image of wireframe](/img/wireframe.png)
+
+## Ảnh data schema
+![Image of data schema](/img/data.png)
