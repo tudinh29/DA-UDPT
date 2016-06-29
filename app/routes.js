@@ -161,7 +161,33 @@ module.exports = function(app, passport) {
             res.end("File is uploaded");
         });
     });
+// facebook -------------------------------
 
+        // send to facebook to do the authentication
+        app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+        // handle the callback after facebook has authenticated the user
+        app.get('/auth/facebook/callback',
+            passport.authenticate('facebook', {
+                successRedirect : '/lichkham',
+                failureRedirect : '/'
+            }));
+        // send to facebook to do the authentication
+        app.get('/connect/facebook', passport.authorize('facebook', { scope : 'email' }));
+
+        // handle the callback after facebook has authorized the user
+        app.get('/connect/facebook/callback',
+            passport.authorize('facebook', {
+                successRedirect : '/lichkham',
+                failureRedirect : '/'
+            }));
+        app.get('/unlink/facebook', isLoggedIn, function(req, res) {
+        var user            = req.user;
+        user.facebook.token = undefined;
+        user.save(function(err) {
+            res.redirect('/lichkham');
+        });
+    });
 
 
 }
