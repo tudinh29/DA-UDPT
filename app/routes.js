@@ -105,6 +105,18 @@ module.exports = function(app, passport) {
             res.json(req.user.history_visit);
         });
 
+     app.post('/themlichmoi',function(req, res){
+         var isodate = new Date(req.param('ngaykham'));
+         isodate = dateformat(isodate, "isoDateTime");
+        User.update({'account.email' : req.user.account.email}, {$push:{"history_visit":{"place":req.param('noikham'),"date" :isodate, "info": req.param('textmess') }}}, function(err, result){
+         if(err) {
+            return res.end("Error");
+        }
+        res.end("them thanh cong");
+        });
+    });
+
+
 }
 
 function isLoggedIn(req, res, next) {
