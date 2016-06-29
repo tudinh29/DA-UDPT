@@ -19,11 +19,8 @@ var userSchema = mongoose.Schema({
     history_visit    :[{ //lich su kham benh
         place        : String,
         date         : Date,
-        doctor       : String
-    }],
-    nutrient         : [{
-        month        : Number,
-        food         : [{vitamin: String}]
+        info       : String //noi dung kham
+        result        :String //ket qua
     }]
 
 });
