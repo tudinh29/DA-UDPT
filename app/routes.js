@@ -101,6 +101,10 @@ module.exports = function(app, passport) {
         });
     });
 
+     app.get('/lichsukham', function(req, res){
+            res.json(req.user.history_visit);
+        });
+
 }
 
 function isLoggedIn(req, res, next) {
